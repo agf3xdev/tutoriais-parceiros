@@ -1,4 +1,4 @@
-// Ingoo Tutoriais — Admin API (Cloudflare Worker)
+// Ingoo Tutoriais Parceiros — Admin API (Cloudflare Worker)
 // Faz proxy autenticado entre o admin.html e o GitHub Contents API.
 //
 // Secrets esperados (defina via `wrangler secret put <NOME>`):
@@ -7,9 +7,9 @@
 //   TOKEN_SECRET   — string aleatória usada como chave HMAC para os tokens de sessão
 //
 // vars (em wrangler.toml):
-//   REPO           — "agf3xdev/ingoo-tutoriais"
+//   REPO           — "agf3xdev/tutoriais-parceiros"
 //   BRANCH         — "main"
-//   ALLOWED_ORIGIN — "https://tutoriais.ingoobrasil.com.br"
+//   ALLOWED_ORIGIN — "https://tutoriaisparceiros.ingoobrasil.com.br"
 
 const TOKEN_TTL_MS = 12 * 3600 * 1000; // 12 horas
 
@@ -81,7 +81,7 @@ async function gh(env, path, opts = {}) {
   const headers = {
     'Authorization': `token ${env.GITHUB_PAT}`,
     'Accept': 'application/vnd.github+json',
-    'User-Agent': 'ingoo-tutoriais-admin-worker',
+    'User-Agent': 'ingoo-tutoriais-parceiros-admin-worker',
     ...(opts.headers || {}),
   };
   if (opts.body && typeof opts.body !== 'string') {
@@ -197,7 +197,7 @@ export default {
         case 'GET /content':        return await handleGetContent(req, env);
         case 'PUT /content':        return await handlePutContent(req, env);
         case 'POST /upload':        return await handleUpload(req, env);
-        case 'GET /':               return json({ ok: true, service: 'ingoo-tutoriais-admin' }, 200, env);
+        case 'GET /':               return json({ ok: true, service: 'ingoo-tutoriais-parceiros-admin' }, 200, env);
       }
       return json({ error: 'not found' }, 404, env);
     } catch (e) {
