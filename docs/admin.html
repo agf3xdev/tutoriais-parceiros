@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#ED7F39" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Ingoo Tutoriais Parceiros · Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body class="admin-body">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand" aria-label="Ingoo">
+        <img class="brand-logo" src="images/ingoo-logo.png" alt="Ingoo" width="120" height="33" />
+        <span class="brand-sub">Admin · Parceiros</span>
+      </a>
+      <div class="admin-bar">
+        <span class="status-pill" id="statusPill"><span class="dot"></span><span id="statusText">Não conectado</span></span>
+        <button class="btn btn-ghost btn-sm" id="logoutBtn" style="display:none">Sair</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="admin-main">
+    <div class="container">
+      <!-- LOGIN -->
+      <section id="loginPanel" class="admin-card login-card">
+        <h1 class="admin-title">Entrar</h1>
+        <p class="admin-help">Acesse com seu usuário e senha de administrador.</p>
+        <div class="form-stack" style="max-width:360px">
+          <label><span>Usuário</span><input type="text" id="userInput" autocomplete="username" autofocus /></label>
+          <label><span>Senha</span><input type="password" id="passInput" autocomplete="current-password" /></label>
+          <button class="btn btn-primary" id="loginBtn" style="margin-top:4px">Entrar</button>
+        </div>
+        <p id="loginMsg" class="admin-msg"></p>
+      </section>
+
+      <!-- APP -->
+      <section id="appPanel" style="display:none">
+
+        <nav class="admin-tabs">
+          <button class="tab active" data-tab="hero">Texto inicial</button>
+          <button class="tab" data-tab="tutorials">Tutoriais</button>
+          <button class="tab" data-tab="faq">FAQ</button>
+          <button class="tab" data-tab="support">Suporte</button>
+        </nav>
+
+        <!-- HERO -->
+        <div class="tab-panel" data-panel="hero">
+          <div class="lang-row" id="heroLangRow"></div>
+          <div class="admin-card" id="heroForm"></div>
+        </div>
+
+        <!-- TUTORIALS -->
+        <div class="tab-panel" data-panel="tutorials" style="display:none">
+          <div class="admin-card">
+            <div class="card-head">
+              <h2 class="admin-title">Tutoriais</h2>
+              <button class="btn btn-primary" id="addTutorialBtn">+ Novo tutorial</button>
+            </div>
+            <div id="tutorialsList"></div>
+          </div>
+        </div>
+
+        <!-- FAQ -->
+        <div class="tab-panel" data-panel="faq" style="display:none">
+          <div class="lang-row" id="faqLangRow"></div>
+          <div class="admin-card">
+            <div class="card-head">
+              <h2 class="admin-title">FAQ <span class="lang-tag" id="faqLangTag">PT</span></h2>
+              <button class="btn btn-primary" id="addFaqBtn">+ Nova pergunta</button>
+            </div>
+            <div id="faqList"></div>
+          </div>
+        </div>
+
+        <!-- SUPPORT -->
+        <div class="tab-panel" data-panel="support" style="display:none">
+          <div class="admin-card">
+            <div class="card-head">
+              <h2 class="admin-title">Cidades de suporte</h2>
+              <button class="btn btn-primary" id="addCityBtn">+ Nova cidade</button>
+            </div>
+            <p class="admin-help">Cada cidade aparece no popover do botão verde de WhatsApp. O usuário clica e cai direto no suporte regional.</p>
+            <div id="supportCitiesList"></div>
+          </div>
+        </div>
+
+        <div class="admin-savebar">
+          <span id="dirtyMsg" class="dirty-msg"></span>
+          <button class="btn btn-primary" id="saveBtn">Salvar tudo</button>
+        </div>
+
+      </section>
+    </div>
+  </main>
+
+  <!-- Modal upload -->
+  <div class="modal" id="uploadModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-content upload-modal">
+      <button class="modal-close" data-close aria-label="Fechar">×</button>
+      <h2 class="modal-title" id="uploadTitle">Novo tutorial</h2>
+      <div class="upload-body">
+        <label>
+          <span>Slug (id curto, sem espaço)</span>
+          <input type="text" id="newSlug" placeholder="meu-tutorial" />
+        </label>
+        <label>
+          <span>Arquivo de vídeo .mp4 (máx 100 MB)</span>
+          <input type="file" id="newVideoFile" accept="video/mp4" />
+        </label>
+        <p class="admin-help">Os textos (título, descrição, badge) você edita depois nas 4 línguas, na lista de tutoriais.</p>
+        <div class="form-row">
+          <button class="btn btn-ghost" data-close>Cancelar</button>
+          <button class="btn btn-primary" id="uploadConfirm">Adicionar</button>
+        </div>
+        <p id="uploadMsg" class="admin-msg"></p>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

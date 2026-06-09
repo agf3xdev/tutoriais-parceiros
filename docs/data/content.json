@@ -1,0 +1,351 @@
+{
+  "support": {
+    "cities": [
+      {
+        "name": "Rio de Janeiro",
+        "whatsapp": "5521920118688",
+        "display": "(21) 92011-8688"
+      },
+      {
+        "name": "São Paulo",
+        "whatsapp": "5511942731507",
+        "display": "(11) 94273-1507"
+      },
+      {
+        "name": "Belo Horizonte",
+        "whatsapp": "5531988337559",
+        "display": "(31) 98833-7559"
+      }
+    ]
+  },
+  "tutorials": [
+    {
+      "slug": "adicionar-anuncio",
+      "burnedLangs": ["pt", "zh"],
+      "i18n": {
+        "pt": {
+          "title": "Como adicionar um anúncio na máquina",
+          "desc": "Passo a passo do fluxo de upload de anúncio do parceiro: do envio ao agendamento na máquina.",
+          "badge": "Mídia"
+        },
+        "en": {
+          "title": "How to upload an ad to the station",
+          "desc": "Step-by-step for the partner ad upload flow: from upload to scheduling on the station screen.",
+          "badge": "Media"
+        },
+        "es": {
+          "title": "Cómo subir un anuncio a la máquina",
+          "desc": "Paso a paso del flujo de carga de anuncio del partner: desde el envío hasta la programación en la pantalla.",
+          "badge": "Medios"
+        },
+        "zh": {
+          "title": "如何上传机器广告",
+          "desc": "代理商广告上传流程分步说明：从上传到机器屏幕排期。",
+          "badge": "广告"
+        }
+      }
+    }
+  ],
+  "site": {
+    "pt": {
+      "htmlLang": "pt-BR",
+      "brand_sub": "Tutoriais · Parceiros",
+      "hero_eyebrow": "Bem-vindo, parceiro Ingoo",
+      "hero_title_a": "Central de SOP",
+      "hero_title_b": "Parceiros Ingoo",
+      "hero_sub": "Aqui você encontra os <b>vídeos SOP</b> que respondem todas as dúvidas operacionais do dia a dia: prospecção, instalação, configuração, manutenção, anúncios e atendimento. Se precisar de mais ajuda, nosso <b>WhatsApp de suporte</b> está sempre disponível.",
+      "cta_watch": "Ver tutoriais",
+      "cta_support": "Falar com suporte",
+      "watch": "Assistir vídeo",
+      "modal_hint": "Dica: ative as legendas no botão CC do player quando disponíveis.",
+      "support_label": "Suporte",
+      "faq_eyebrow": "Operação no dia a dia",
+      "faq_title": "Perguntas frequentes dos parceiros",
+      "faq": [
+        {
+          "q": "Qual é o perfil ideal de parceiro Ingoo?",
+          "a": "Estabelecimentos com fluxo constante de público, gestão aberta à inovação e foco em experiência do cliente: bares, restaurantes, casas noturnas, eventos, academias, hotéis, hostels, coworkings e shoppings. Priorize quem demonstra interesse proativo em parceria — a negociação flui mais rápido."
+        },
+        {
+          "q": "Como funciona o modelo de parceria?",
+          "a": "Comodato: a Ingoo instala o equipamento sem custo para o estabelecimento, e o parceiro recebe um percentual da receita gerada pelos aluguéis das power banks. Em uma segunda fase, também há divisão da receita de publicidade veiculada nas máquinas."
+        },
+        {
+          "q": "Quanto o parceiro pode ganhar por mês?",
+          "a": "O cálculo é: <b>tempo de uso × preço de aluguel por sessão × percentual de repasse</b>. Exemplo: 1 máquina usada 6 vezes ao dia, com média de 1,5h por sessão = 9h de uso por dia × 30 dias × percentual acordado. Sem custo de instalação ou operação para o parceiro."
+        },
+        {
+          "q": "Quando o repasse é pago?",
+          "a": "O repasse é mensal, com base nos pedidos do mês anterior, creditado até o dia <b>10 de cada mês</b>. Trabalhamos com pontualidade e transparência. Qualquer dúvida sobre valores, a equipe comercial resolve rápido."
+        },
+        {
+          "q": "Onde a máquina deve ser instalada?",
+          "a": "Locais ideais: balcão do caixa, próximo à entrada, em áreas com boa visibilidade para clientes e equipe. Evitar cantos escondidos, áreas obstruídas por móveis ou ambientes visualmente desorganizados — atrapalha a percepção da marca e o uso."
+        },
+        {
+          "q": "Quanto a máquina consome de energia?",
+          "a": "Muito pouco. Uma máquina de 8 slots consome em média <b>0,5 kWh por dia</b>. Pode ser desligada quando a loja fecha — peça à equipe para religar no início do expediente."
+        },
+        {
+          "q": "A máquina está com luz amarela ou laranja. O que fazer?",
+          "a": "<b>Amarela</b>: instabilidade no Wi-Fi. Reconecte à rede e salve as configurações — costuma resolver em minutos. <b>Laranja</b>: problema no chip. Desligue e ligue novamente. Se não resolver, chame o suporte técnico."
+        },
+        {
+          "q": "Como configurar o chip da máquina?",
+          "a": "Inserir o chip na lateral → desligar e ligar a máquina → conectar mouse e fechar as abas com botão direito → <i>Configurações → Redes e Internet → Rede móvel → Avançado → Nomes dos pontos de acesso</i> → <b>+</b> → Nome e APN: <code>internet.br</code> → Salvar → ativar a APN → ativar Roaming → voltar e abrir o ícone verde <b>mtserial</b> → remover o mouse."
+        },
+        {
+          "q": "Como conectar a máquina ao Wi-Fi?",
+          "a": "Importante: apenas redes <b>2,4 GHz</b> são compatíveis. Conectar mouse → fechar abas → <i>Configurações → Rede e Internet</i> → conectar à rede do estabelecimento → <i>Preferências de Wi-Fi</i> → ativar <i>Wi-Fi automaticamente</i> → fechar abas → abrir o ícone verde <b>Mtserial</b> → remover o mouse. Quando a conexão estiver OK, os LEDs mudam de amarelo para verde."
+        },
+        {
+          "q": "Como lidar com as objeções mais comuns?",
+          "a": "<b>“Não tenho espaço”</b> → equipamento compacto, não ocupa área útil. <b>“Meu cliente não vai usar”</b> → mostre dados de uso e o comportamento do consumidor sempre conectado. <b>“É caro”</b> → reforce o valor (mobilidade, conveniência), não o preço. Escute primeiro, valide a preocupação e responda com dados reais."
+        },
+        {
+          "q": "Como cadastrar um novo comerciante?",
+          "a": "1) Preencher informações básicas + fotos (fachada, posição da máquina, ambiente interno). 2) Inserir endereço, definir depósito e taxa de aluguel. 3) Após confirmar a criação, o comerciante pode ser ativado. Formulário oficial: <a href='https://forms.gle/XsjyVbNEBWhZBTzAA' target='_blank' rel='noopener'>forms.gle/XsjyVbNEBWhZBTzAA</a>."
+        },
+        {
+          "q": "Como funciona o suporte e quem o parceiro aciona?",
+          "a": "Suporte 24h por 7 dias, com WhatsApp regional para cada cidade (Rio, São Paulo, Belo Horizonte) — botão verde flutuante desta página. Para problemas técnicos do equipamento, deixe o contato direto da equipe de operação/manutenção registrado com o parceiro desde a instalação."
+        },
+        {
+          "q": "O parceiro pode encerrar o contrato antes do prazo?",
+          "a": "Sim. Primeiro tentamos entender o motivo e resolver. Se a rescisão for mantida, pedimos <b>aviso prévio de no mínimo 30 dias</b> para organizar a retirada do equipamento com responsabilidade."
+        },
+        {
+          "q": "Como funciona a publicidade nas máquinas?",
+          "a": "O parceiro envia o vídeo de anúncio pelo painel — veja o tutorial <i>“Como adicionar um anúncio na máquina”</i> nesta página. A receita gerada pela mídia é compartilhada conforme o contrato."
+        }
+      ],
+      "footer_made": "Feito para os parceiros Ingoo",
+      "support_choose_city": "Escolha sua cidade"
+    },
+    "en": {
+      "htmlLang": "en",
+      "brand_sub": "Tutorials · Partners",
+      "hero_eyebrow": "Welcome, Ingoo partner",
+      "hero_title_a": "Partner SOP",
+      "hero_title_b": "Ingoo Hub",
+      "hero_sub": "Here you'll find the <b>SOP videos</b> that cover all day-to-day operational questions: prospecting, installation, setup, maintenance, ads and support. If you need more help, our <b>WhatsApp support</b> is always available.",
+      "cta_watch": "Watch tutorials",
+      "cta_support": "Talk to support",
+      "watch": "Watch video",
+      "modal_hint": "Tip: enable subtitles via the CC button in the player when available.",
+      "support_label": "Support",
+      "faq_eyebrow": "Day-to-day operations",
+      "faq_title": "Partner FAQ",
+      "faq": [
+        {
+          "q": "What is the ideal Ingoo partner profile?",
+          "a": "Venues with steady foot traffic, management open to innovation and focus on customer experience: bars, restaurants, nightclubs, events, gyms, hotels, hostels, coworking spaces and malls. Prioritize those proactively interested in a partnership — talks move faster."
+        },
+        {
+          "q": "How does the partnership model work?",
+          "a": "Free loan (comodato): Ingoo installs the equipment at no cost to the venue, and the partner receives a share of the revenue generated by power bank rentals. In a second phase, ad revenue shown on the stations is also shared."
+        },
+        {
+          "q": "How much can the partner earn per month?",
+          "a": "Formula: <b>usage time × rental price per session × revenue share %</b>. Example: 1 station rented 6 times a day, ~1.5h per session = 9h/day × 30 days × agreed share. No installation or operating cost for the partner."
+        },
+        {
+          "q": "When is the payout sent?",
+          "a": "Payouts are monthly, based on the prior month's orders, credited by the <b>10th of each month</b>. We pay on time and with full transparency. Any question about amounts, the commercial team resolves quickly."
+        },
+        {
+          "q": "Where should the station be installed?",
+          "a": "Best locations: checkout counter, near the entrance, high-visibility areas for both customers and staff. Avoid hidden corners, areas blocked by furniture or visually messy spots — they hurt brand perception and usage."
+        },
+        {
+          "q": "How much energy does the station consume?",
+          "a": "Very little. An 8-slot station consumes on average <b>0.5 kWh per day</b>. It can be switched off when the venue is closed — just have the team turn it back on at opening."
+        },
+        {
+          "q": "The station shows a yellow or orange light. What now?",
+          "a": "<b>Yellow</b>: Wi-Fi instability. Reconnect to the network and save settings — usually fixes it in minutes. <b>Orange</b>: SIM card issue. Power cycle the station. If it persists, call technical support."
+        },
+        {
+          "q": "How do I configure the station's SIM card?",
+          "a": "Insert the SIM in the side slot → power cycle the station → plug in a mouse and close the open tabs with right-click → <i>Settings → Networks &amp; Internet → Mobile network → Advanced → Access Point Names</i> → <b>+</b> → Name and APN: <code>internet.br</code> → Save → enable the APN → enable Roaming → go back and open the green <b>mtserial</b> icon → unplug the mouse."
+        },
+        {
+          "q": "How do I connect the station to Wi-Fi?",
+          "a": "Important: only <b>2.4 GHz</b> networks are supported. Plug in a mouse → close tabs → <i>Settings → Network &amp; Internet</i> → connect to the venue's Wi-Fi → <i>Wi-Fi preferences</i> → enable <i>Turn on Wi-Fi automatically</i> → close tabs → open the green <b>Mtserial</b> icon → unplug the mouse. Once connected, the LEDs change from yellow to green."
+        },
+        {
+          "q": "How do I handle the most common objections?",
+          "a": "<b>“I don't have space”</b> → compact device, doesn't take counter space. <b>“My customers won't use it”</b> → show usage data and the always-connected consumer behavior. <b>“It's expensive”</b> → emphasize value (mobility, convenience), not price. Listen first, validate the concern, answer with real data."
+        },
+        {
+          "q": "How do I onboard a new venue?",
+          "a": "1) Fill basic info + photos (façade, station position, interior). 2) Add address, set deposit and rental fee. 3) Confirm and activate. Official form: <a href='https://forms.gle/XsjyVbNEBWhZBTzAA' target='_blank' rel='noopener'>forms.gle/XsjyVbNEBWhZBTzAA</a>."
+        },
+        {
+          "q": "How does support work and who do I call?",
+          "a": "24/7 support, with regional WhatsApp per city (Rio, São Paulo, Belo Horizonte) — green floating button on this page. For station tech issues, leave the operations/maintenance team's direct contact with the partner from day one."
+        },
+        {
+          "q": "Can the partner terminate the contract early?",
+          "a": "Yes. We try to understand the reason first and solve any issue. If termination stands, we ask for at least <b>30 days' notice</b> to organize equipment retrieval responsibly."
+        },
+        {
+          "q": "How do ads on the stations work?",
+          "a": "The partner uploads the ad video via the panel — see the <i>“How to upload an ad to the station”</i> tutorial on this page. Ad revenue is shared per the contract."
+        }
+      ],
+      "footer_made": "Made for Ingoo partners",
+      "support_choose_city": "Choose your city"
+    },
+    "es": {
+      "htmlLang": "es",
+      "brand_sub": "Tutoriales · Partners",
+      "hero_eyebrow": "Bienvenido, partner Ingoo",
+      "hero_title_a": "Central SOP",
+      "hero_title_b": "Partners Ingoo",
+      "hero_sub": "Aquí están los <b>videos SOP</b> que responden todas las dudas operativas del día a día: prospección, instalación, configuración, mantenimiento, anuncios y atención. Si necesitas más ayuda, nuestro <b>soporte por WhatsApp</b> siempre está disponible.",
+      "cta_watch": "Ver tutoriales",
+      "cta_support": "Hablar con soporte",
+      "watch": "Ver video",
+      "modal_hint": "Consejo: activa los subtítulos con el botón CC del reproductor cuando estén disponibles.",
+      "support_label": "Soporte",
+      "faq_eyebrow": "Operación del día a día",
+      "faq_title": "Preguntas frecuentes del partner",
+      "faq": [
+        {
+          "q": "¿Cuál es el perfil ideal de partner Ingoo?",
+          "a": "Establecimientos con flujo constante de público, gestión abierta a la innovación y foco en experiencia del cliente: bares, restaurantes, discotecas, eventos, gimnasios, hoteles, hostels, coworkings y shoppings. Prioriza quienes muestran interés proactivo — la negociación fluye más rápido."
+        },
+        {
+          "q": "¿Cómo funciona el modelo de partnership?",
+          "a": "Comodato: Ingoo instala el equipo sin costo para el establecimiento y el partner recibe un porcentaje de los ingresos por alquileres de power banks. En una segunda fase, también se comparte la receita de publicidad en las máquinas."
+        },
+        {
+          "q": "¿Cuánto puede ganar el partner al mes?",
+          "a": "Cálculo: <b>tiempo de uso × precio por sesión × porcentaje acordado</b>. Ejemplo: 1 máquina alquilada 6 veces al día, ~1,5h por sesión = 9h/día × 30 días × porcentaje. Sin costo de instalación ni de operación para el partner."
+        },
+        {
+          "q": "¿Cuándo se paga el reparto?",
+          "a": "El reparto es mensual, con base en los pedidos del mes anterior, acreditado hasta el <b>día 10 de cada mes</b>. Trabajamos con puntualidad y transparencia. Cualquier duda sobre valores, el equipo comercial resuelve rápido."
+        },
+        {
+          "q": "¿Dónde se debe instalar la máquina?",
+          "a": "Locales ideales: mostrador de caja, cerca de la entrada, áreas con buena visibilidad para clientes y equipo. Evitar rincones escondidos, áreas obstruidas o ambientes desorganizados — perjudica la percepción de marca y el uso."
+        },
+        {
+          "q": "¿Cuánta energía consume la máquina?",
+          "a": "Muy poca. Una máquina de 8 slots consume en promedio <b>0,5 kWh por día</b>. Se puede apagar cuando cierra el local — basta con que el equipo la encienda al abrir."
+        },
+        {
+          "q": "La máquina está con luz amarilla o naranja. ¿Qué hago?",
+          "a": "<b>Amarilla</b>: inestabilidad de Wi-Fi. Reconecta a la red y guarda configuración — suele resolverse en minutos. <b>Naranja</b>: problema con el chip. Apaga y enciende. Si persiste, llama al soporte técnico."
+        },
+        {
+          "q": "¿Cómo configurar el chip de la máquina?",
+          "a": "Insertar el chip al costado → apagar y encender → conectar mouse y cerrar pestañas con clic derecho → <i>Configuración → Redes e Internet → Red móvil → Avanzado → Nombres de puntos de acceso</i> → <b>+</b> → Nombre y APN: <code>internet.br</code> → Guardar → activar la APN → activar Roaming → volver y abrir el ícono verde <b>mtserial</b> → desconectar el mouse."
+        },
+        {
+          "q": "¿Cómo conectar la máquina al Wi-Fi?",
+          "a": "Importante: solo redes <b>2,4 GHz</b> son compatibles. Conectar mouse → cerrar pestañas → <i>Configuración → Red e Internet</i> → conectar a la red del local → <i>Preferencias de Wi-Fi</i> → activar <i>Wi-Fi automático</i> → cerrar pestañas → abrir el ícono verde <b>Mtserial</b> → desconectar el mouse. Cuando conecta, los LED pasan de amarillo a verde."
+        },
+        {
+          "q": "¿Cómo manejar las objeciones más comunes?",
+          "a": "<b>“No tengo espacio”</b> → equipo compacto, no ocupa área útil. <b>“Mi cliente no la va a usar”</b> → muestra datos de uso y el comportamiento del consumidor conectado. <b>“Es caro”</b> → refuerza el valor (movilidad, conveniencia), no el precio. Escucha primero, valida la preocupación, responde con datos."
+        },
+        {
+          "q": "¿Cómo registrar un nuevo comercio?",
+          "a": "1) Completar info básica + fotos (fachada, posición de la máquina, interior). 2) Agregar dirección, depósito y tarifa de alquiler. 3) Confirmar y activar. Formulario oficial: <a href='https://forms.gle/XsjyVbNEBWhZBTzAA' target='_blank' rel='noopener'>forms.gle/XsjyVbNEBWhZBTzAA</a>."
+        },
+        {
+          "q": "¿Cómo funciona el soporte y a quién llamar?",
+          "a": "Soporte 24/7, con WhatsApp regional por ciudad (Río, São Paulo, Belo Horizonte) — botón verde flotante de esta página. Para problemas técnicos del equipo, deja registrado con el partner el contacto directo del equipo de operación/mantenimiento desde la instalación."
+        },
+        {
+          "q": "¿El partner puede rescindir el contrato antes del plazo?",
+          "a": "Sí. Primero buscamos entender el motivo y resolver. Si la rescisión se mantiene, pedimos <b>aviso previo de al menos 30 días</b> para organizar el retiro del equipo con responsabilidad."
+        },
+        {
+          "q": "¿Cómo funciona la publicidad en las máquinas?",
+          "a": "El partner sube el video de anuncio por el panel — mira el tutorial <i>“Cómo subir un anuncio a la máquina”</i> en esta página. La receta del anuncio se reparte según el contrato."
+        }
+      ],
+      "footer_made": "Hecho para los partners Ingoo",
+      "support_choose_city": "Elige tu ciudad"
+    },
+    "zh": {
+      "htmlLang": "zh-CN",
+      "brand_sub": "教程 · 代理商",
+      "hero_eyebrow": "欢迎，Ingoo 代理商",
+      "hero_title_a": "代理商 SOP",
+      "hero_title_b": "Ingoo 中心",
+      "hero_sub": "这里汇集了所有日常运营的 <b>SOP 视频</b>：开发、安装、配置、维护、广告与服务。如需更多帮助，我们的 <b>WhatsApp 客服</b> 随时为您服务。",
+      "cta_watch": "观看教程",
+      "cta_support": "联系客服",
+      "watch": "观看视频",
+      "modal_hint": "提示：如有可用字幕，请点击播放器的 CC 按钮开启。",
+      "support_label": "客服",
+      "faq_eyebrow": "日常运营",
+      "faq_title": "代理商常见问题",
+      "faq": [
+        {
+          "q": "Ingoo 的理想代理商画像是什么？",
+          "a": "客流稳定、管理者愿意接受创新、注重客户体验的场所：酒吧、餐厅、夜店、活动、健身房、酒店、青旅、共享办公和商场。优先考虑主动表达合作意向的商家——谈判推进更快。"
+        },
+        {
+          "q": "合作模式是怎样的？",
+          "a": "免费寄存（comodato）：Ingoo 免费安装设备，合作伙伴按充电宝租赁收入获得分成。第二阶段还将分享投放在机器屏幕上的广告收入。"
+        },
+        {
+          "q": "代理商每月能赚多少？",
+          "a": "公式：<b>使用时长 × 每次租赁价格 × 分成比例</b>。例如：1 台设备每天租出 6 次，每次约 1.5 小时 = 每天 9 小时 × 30 天 × 约定分成。合作伙伴无安装与运营成本。"
+        },
+        {
+          "q": "分成何时结算？",
+          "a": "按月结算，依据上月订单，<b>每月 10 日前</b>到账。准时、透明。如对金额有疑问，商务团队会快速跟进。"
+        },
+        {
+          "q": "机器应该安装在哪里？",
+          "a": "最佳位置：收银台、靠近门口、客户与员工视野好的区域。避免隐蔽角落、被家具挡住或视觉杂乱的位置——会影响品牌印象与使用率。"
+        },
+        {
+          "q": "机器耗电量是多少？",
+          "a": "非常省电。一台 8 槽设备日均耗电约 <b>0.5 kWh</b>。店铺关门时可以断电，开业时再让员工通电即可。"
+        },
+        {
+          "q": "机器显示黄灯或橙灯怎么办？",
+          "a": "<b>黄灯</b>：Wi-Fi 不稳定。重新连接网络并保存配置——几分钟即可恢复。<b>橙灯</b>：SIM 卡问题。重启机器。如仍未恢复，请联系技术支持。"
+        },
+        {
+          "q": "如何设置机器的 SIM 卡？",
+          "a": "侧面插入 SIM 卡 → 重启机器 → 接入鼠标，右键关闭所有标签 → <i>设置 → 网络与互联网 → 移动网络 → 高级 → 接入点名称</i> → <b>+</b> → 名称与 APN：<code>internet.br</code> → 保存 → 激活该 APN → 启用漫游 → 返回并打开绿色 <b>mtserial</b> 图标 → 拔下鼠标。"
+        },
+        {
+          "q": "如何将机器连接到 Wi-Fi？",
+          "a": "重要：仅支持 <b>2.4 GHz</b> 网络。接入鼠标 → 关闭标签 → <i>设置 → 网络与互联网</i> → 连接场所 Wi-Fi → <i>Wi-Fi 偏好</i> → 启用 <i>自动开启 Wi-Fi</i> → 关闭标签 → 打开绿色 <b>Mtserial</b> 图标 → 拔下鼠标。连接成功后，LED 由黄变绿。"
+        },
+        {
+          "q": "如何应对常见反对意见？",
+          "a": "<b>“没有空间”</b> → 设备小巧，不占用工作台。<b>“客户不会用”</b> → 展示使用数据与始终在线的消费行为。<b>“太贵了”</b> → 强调价值（移动性、便利性），而非价格。先倾听、肯定顾虑，再用数据回应。"
+        },
+        {
+          "q": "如何新增一个商户？",
+          "a": "1) 填写基础信息 + 上传照片（门面、机器位置、内景）。2) 输入地址、设置押金与租金。3) 确认创建后即可激活。官方表单：<a href='https://forms.gle/XsjyVbNEBWhZBTzAA' target='_blank' rel='noopener'>forms.gle/XsjyVbNEBWhZBTzAA</a>。"
+        },
+        {
+          "q": "客服如何运作？联系谁？",
+          "a": "7×24 客服，按城市提供 WhatsApp 客服（里约、圣保罗、贝洛奥里藏特）——本页右下角的绿色悬浮按钮。设备技术问题，请在安装时即把运营/维护团队的直接联系方式留给合作伙伴。"
+        },
+        {
+          "q": "合作伙伴能否提前终止合同？",
+          "a": "可以。我们会先了解原因并尝试解决。如确认终止，请至少 <b>提前 30 天通知</b>，以便妥善安排设备回收。"
+        },
+        {
+          "q": "机器广告是如何运作的？",
+          "a": "合作伙伴通过后台上传广告视频——参见本页教程《如何上传机器广告》。广告收入按合同分成。"
+        }
+      ],
+      "footer_made": "为 Ingoo 合作伙伴精心打造",
+      "support_choose_city": "选择您的城市"
+    }
+  }
+}

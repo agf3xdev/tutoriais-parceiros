@@ -1,0 +1,9 @@
+.git
+.gitignore
+*.sh
+*.log
+*.md
+subtitles/*.mp3
+docs/.git
+node_modules
+.DS_Store

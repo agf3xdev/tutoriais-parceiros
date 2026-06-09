@@ -1,0 +1,13 @@
+name = "ingoo-tutoriais-parceiros-admin"
+main = "src/index.js"
+compatibility_date = "2026-05-01"
+
+[vars]
+REPO = "agf3xdev/tutoriais-parceiros"
+BRANCH = "main"
+ALLOWED_ORIGIN = "https://tutoriaisparceiros.ingoobrasil.com.br"
+
+# Os secrets (GITHUB_PAT, AUTH_USERS, TOKEN_SECRET) são definidos via:
+#   npx wrangler secret put GITHUB_PAT
+#   npx wrangler secret put AUTH_USERS
+#   npx wrangler secret put TOKEN_SECRET
