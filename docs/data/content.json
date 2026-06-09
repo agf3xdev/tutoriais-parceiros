@@ -20,6 +20,136 @@
   },
   "tutorials": [
     {
+      "slug": "maquina-online-offline",
+      "burnedSubs": true,
+      "i18n": {
+        "pt": {
+          "title": "Como identificar máquina online ou offline",
+          "desc": "Aprenda a checar rapidamente se sua máquina Ingoo está conectada e pronta para alugar.",
+          "badge": "Básico"
+        },
+        "en": {
+          "title": "How to tell if the station is online or offline",
+          "desc": "Quickly check whether your Ingoo station is connected and ready to rent power banks.",
+          "badge": "Basics"
+        },
+        "es": {
+          "title": "Cómo saber si la estación está online u offline",
+          "desc": "Verifica rápidamente si tu estación Ingoo está conectada y lista para alquilar.",
+          "badge": "Básico"
+        },
+        "zh": {
+          "title": "如何识别机器在线或离线",
+          "desc": "快速查看您的 Ingoo 机器是否已连接并准备好出租。",
+          "badge": "基础"
+        }
+      }
+    },
+    {
+      "slug": "conectar-wifi",
+      "burnedSubs": true,
+      "i18n": {
+        "pt": {
+          "title": "Como conectar a máquina ao Wi-Fi",
+          "desc": "Passo a passo para conectar sua máquina à rede Wi-Fi do estabelecimento.",
+          "badge": "Configuração"
+        },
+        "en": {
+          "title": "How to connect the station to Wi-Fi",
+          "desc": "Step-by-step to connect your station to the venue's Wi-Fi network.",
+          "badge": "Setup"
+        },
+        "es": {
+          "title": "Cómo conectar la estación al Wi-Fi",
+          "desc": "Paso a paso para conectar tu estación a la red Wi-Fi del local.",
+          "badge": "Configuración"
+        },
+        "zh": {
+          "title": "如何将机器连接到 Wi-Fi",
+          "desc": "将机器连接到场所 Wi-Fi 网络的分步指南。",
+          "badge": "设置"
+        }
+      }
+    },
+    {
+      "slug": "aluguel-cartao",
+      "burnedSubs": true,
+      "i18n": {
+        "pt": {
+          "title": "Aluguel pelo cartão de crédito",
+          "desc": "Como o cliente faz a retirada da power bank pagando com cartão de crédito.",
+          "badge": "Pagamentos"
+        },
+        "en": {
+          "title": "Renting with a credit card",
+          "desc": "How customers rent a power bank by paying with a credit card.",
+          "badge": "Payments"
+        },
+        "es": {
+          "title": "Alquiler con tarjeta de crédito",
+          "desc": "Cómo el cliente retira el power bank pagando con tarjeta de crédito.",
+          "badge": "Pagos"
+        },
+        "zh": {
+          "title": "使用信用卡租借",
+          "desc": "客户如何通过信用卡支付来租借充电宝。",
+          "badge": "支付"
+        }
+      }
+    },
+    {
+      "slug": "retirada-pix",
+      "burnedSubs": true,
+      "i18n": {
+        "pt": {
+          "title": "Retirada e devolução via PIX",
+          "desc": "Fluxo completo de retirada e devolução de power bank usando pagamento via PIX.",
+          "badge": "Pagamentos"
+        },
+        "en": {
+          "title": "Pickup and return via PIX",
+          "desc": "Full flow for renting and returning a power bank using PIX (Brazilian instant payment).",
+          "badge": "Payments"
+        },
+        "es": {
+          "title": "Retiro y devolución vía PIX",
+          "desc": "Flujo completo de retiro y devolución del power bank usando pago con PIX.",
+          "badge": "Pagos"
+        },
+        "zh": {
+          "title": "通过 PIX 取借与归还",
+          "desc": "使用 PIX（巴西即时支付）租借和归还充电宝的完整流程。",
+          "badge": "支付"
+        }
+      }
+    },
+    {
+      "slug": "saque-comerciante",
+      "burnedSubs": false,
+      "i18n": {
+        "pt": {
+          "title": "Sistema de saque do comerciante",
+          "desc": "Tour completo pelo perfil de comerciante: saque, histórico, dispositivos, feedback e mais.",
+          "badge": "Sistema"
+        },
+        "en": {
+          "title": "Merchant withdrawal system",
+          "desc": "Full tour of the merchant profile: withdrawals, history, devices, feedback and more.",
+          "badge": "System"
+        },
+        "es": {
+          "title": "Sistema de retiro del comerciante",
+          "desc": "Recorrido completo por el perfil de comerciante: retiro, historial, dispositivos, feedback y más.",
+          "badge": "Sistema"
+        },
+        "zh": {
+          "title": "商户提现系统",
+          "desc": "完整介绍商户界面：提现、历史记录、设备、反馈等功能。",
+          "badge": "系统"
+        }
+      }
+    },
+    {
       "slug": "adicionar-anuncio",
       "burnedLangs": ["pt", "zh"],
       "i18n": {

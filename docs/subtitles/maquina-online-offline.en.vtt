@@ -1,0 +1,25 @@
+WEBVTT
+
+00:00.000 --> 00:05.200
+Our station has two indicator colors: yellow and green. This one is yellow.
+
+00:05.200 --> 00:08.800
+When it's yellow I can't process a rental — that means the station is offline.
+
+00:08.800 --> 00:16.300
+If I scan the station like this, it won't let me proceed because the device is offline. It's unusable.
+
+00:16.300 --> 00:19.000
+What can I do in this situation?
+
+00:19.000 --> 00:25.600
+Restart the station: it will detect the SIM again and come back online.
+
+00:25.600 --> 00:30.900
+It can also be a Wi-Fi issue. If the station was connected and the password was changed,
+
+00:30.900 --> 00:34.400
+we need to edit the Wi-Fi network so it can run again.
+
+00:34.400 --> 00:42.400
+With Wi-Fi connected, within a few seconds the color turns from yellow to green — ready to use.
