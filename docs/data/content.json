@@ -150,6 +150,32 @@
       }
     },
     {
+      "slug": "outros-produtos-ingoo",
+      "burnedLangs": ["pt", "en", "zh"],
+      "i18n": {
+        "pt": {
+          "title": "Conheça nossos outros produtos",
+          "desc": "Apresentação institucional Ingoo: power banks compartilhados e o portfólio que o parceiro pode oferecer ao cliente final.",
+          "badge": "Institucional"
+        },
+        "en": {
+          "title": "Discover our other products",
+          "desc": "Ingoo institutional intro: shared power banks and the portfolio partners can offer their customers.",
+          "badge": "Brand"
+        },
+        "es": {
+          "title": "Conoce nuestros otros productos",
+          "desc": "Presentación institucional de Ingoo: power banks compartidos y el portafolio que el partner puede ofrecer al cliente final.",
+          "badge": "Institucional"
+        },
+        "zh": {
+          "title": "了解我们的其他产品",
+          "desc": "Ingoo 品牌介绍：共享充电宝以及代理商可向终端客户提供的产品组合。",
+          "badge": "品牌"
+        }
+      }
+    },
+    {
       "slug": "adicionar-anuncio",
       "burnedLangs": ["pt", "zh"],
       "i18n": {
