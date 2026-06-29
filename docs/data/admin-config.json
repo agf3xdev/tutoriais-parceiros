@@ -1,3 +1,4 @@
 {
-  "api": ""
+  "supabaseUrl": "https://yiywodoxnuhayttmdbqj.supabase.co",
+  "supabaseAnon": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlpeXdvZG94bnVoYXl0dG1kYnFqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODI3NzcxMDQsImV4cCI6MjA5ODM1MzEwNH0._vE1VqWDtfYgbu-WCtrKDfc1dJgJltMMYPpspTnW5is"
 }

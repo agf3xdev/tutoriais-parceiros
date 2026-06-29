@@ -2,6 +2,8 @@
   const TOKEN_KEY = 'ingoo_admin_session';
   const LANGS = ['pt', 'en', 'es', 'zh'];
   const LANG_LABELS = { pt: 'PT', en: 'EN', es: 'ES', zh: 'ZH' };
+  const ADMIN_DOMAIN = 'parceiros.ingoo';
+  let sb = null; // Supabase client
 
   const HERO_FIELDS = [
     { key: 'brand_sub', label: 'Sub-marca (header)', type: 'text' },
@@ -20,10 +22,7 @@
   ];
 
   const state = {
-    api: '',
-    token: '',
     user: '',
-    sha: null,
     data: null,
     dirty: false,
     activeLang: 'pt',
@@ -38,40 +37,6 @@
     toastEl.className = 'toast show' + (type === 'err' ? ' err' : '');
     clearTimeout(toastT);
     toastT = setTimeout(() => toastEl.classList.remove('show'), 3500);
-  }
-
-  // ---------- session ----------
-  function saveSession(token, user) {
-    state.token = token;
-    state.user = user;
-    localStorage.setItem(TOKEN_KEY, JSON.stringify({ token, user }));
-  }
-  function loadSession() {
-    try {
-      const s = JSON.parse(localStorage.getItem(TOKEN_KEY) || 'null');
-      if (s && s.token) { state.token = s.token; state.user = s.user; return s; }
-    } catch {}
-    return null;
-  }
-  function clearSession() {
-    localStorage.removeItem(TOKEN_KEY);
-    state.token = '';
-    state.user = '';
-  }
-
-  // ---------- api helpers ----------
-  async function apiCall(method, path, body) {
-    if (!state.api) throw new Error('Worker não configurado em data/admin-config.json');
-    const headers = {};
-    if (state.token) headers['Authorization'] = `Bearer ${state.token}`;
-    if (body) headers['Content-Type'] = 'application/json';
-    const res = await fetch(state.api.replace(/\/$/, '') + path, {
-      method, headers, body: body ? JSON.stringify(body) : undefined,
-    });
-    const text = await res.text();
-    const data = text ? JSON.parse(text) : null;
-    if (!res.ok) throw new Error(data?.error || `HTTP ${res.status}`);
-    return data;
   }
 
   // ---------- base64 / utf8 ----------
@@ -383,22 +348,23 @@
     document.querySelectorAll('.tab-panel').forEach((p) => p.style.display = p.dataset.panel === name ? '' : 'none');
   }
 
-  // ---------- LOAD / SAVE ----------
+  // ---------- LOAD / SAVE (Supabase) ----------
   async function loadAll() {
-    const r = await apiCall('GET', '/content');
-    state.sha = r.sha;
-    state.data = JSON.parse(decodeUtf8B64(r.content));
+    const { data, error } = await sb.from('content').select('data').eq('id', 1).single();
+    if (error) throw new Error('Falha ao carregar conteúdo: ' + error.message);
+    state.data = data.data;
   }
 
   async function saveAll() {
     if (!state.dirty) { toast('Nada para salvar'); return; }
     document.getElementById('saveBtn').disabled = true;
     try {
-      const jsonStr = JSON.stringify(state.data, null, 2);
-      const r = await apiCall('PUT', '/content', { sha: state.sha, content: encodeUtf8B64(jsonStr) });
-      state.sha = r.sha;
+      const { error } = await sb.from('content')
+        .update({ data: state.data, updated_at: new Date().toISOString() })
+        .eq('id', 1);
+      if (error) throw new Error(error.message);
       markSaved();
-      toast('Salvo — site atualiza em ~1 min');
+      toast('Salvo — já está no ar');
     } catch (e) {
       toast(e.message, 'err');
     } finally {
@@ -433,23 +399,24 @@
       msg.textContent = 'Já existe tutorial com esse slug.'; msg.classList.add('err'); return;
     }
     if (!file) { msg.textContent = 'Selecione um arquivo .mp4'; msg.classList.add('err'); return; }
-    if (file.size > 95 * 1024 * 1024) {
-      msg.textContent = `Arquivo muito grande (${(file.size/1024/1024).toFixed(1)} MB). Limite ~95 MB.`;
+    if (file.size > 50 * 1024 * 1024) {
+      msg.textContent = `Arquivo muito grande (${(file.size/1024/1024).toFixed(1)} MB). Limite ~50 MB.`;
       msg.classList.add('err'); return;
     }
 
     const btn = document.getElementById('uploadConfirm');
     btn.disabled = true; btn.textContent = 'Enviando…';
     try {
-      msg.textContent = 'Lendo arquivo…';
-      const ab = await file.arrayBuffer();
-      msg.textContent = 'Enviando…';
-      const b64 = abToBase64(ab);
-      await apiCall('POST', '/upload', { path: `docs/videos/${slug}.mp4`, content: b64 });
+      msg.textContent = 'Enviando vídeo…';
+      const path = `${slug}.mp4`;
+      const up = await sb.storage.from('videos').upload(path, file, { upsert: true, contentType: 'video/mp4' });
+      if (up.error) throw new Error(up.error.message);
+      const { data: pub } = sb.storage.from('videos').getPublicUrl(path);
 
       state.data.tutorials = state.data.tutorials || [];
       state.data.tutorials.push({
         slug,
+        videoUrl: pub.publicUrl,
         burnedSubs: false,
         i18n: {
           pt: { title: slug, desc: '', badge: '' },
@@ -470,15 +437,17 @@
     }
   }
 
-  // ---------- AUTH ----------
+  // ---------- AUTH (Supabase) ----------
   async function login(user, pass) {
-    const r = await apiCall('POST', '/login', { user, pass });
-    saveSession(r.token, r.user);
-    return r.user;
+    const email = user.includes('@') ? user : `${user}@${ADMIN_DOMAIN}`;
+    const { data, error } = await sb.auth.signInWithPassword({ email, password: pass });
+    if (error) throw new Error('Usuário ou senha incorretos');
+    state.user = ((data.user && data.user.email) || user).replace(`@${ADMIN_DOMAIN}`, '');
+    return state.user;
   }
 
-  function logout() {
-    clearSession();
+  async function logout() {
+    if (sb) await sb.auth.signOut();
     location.reload();
   }
 
@@ -549,7 +518,9 @@
     try {
       const r = await fetch(`data/admin-config.json?cb=${Date.now()}`);
       const c = await r.json();
-      state.api = c.api || '';
+      if (c.supabaseUrl && c.supabaseAnon && window.supabase) {
+        sb = window.supabase.createClient(c.supabaseUrl, c.supabaseAnon);
+      }
     } catch {}
   }
 
@@ -557,22 +528,17 @@
   (async () => {
     await loadConfig();
     bindStaticEvents();
-    if (!state.api) {
+    if (!sb) {
       document.getElementById('loginMsg').className = 'login-msg err';
-      document.getElementById('loginMsg').textContent = 'Worker ainda não configurado. Defina a URL em data/admin-config.json.';
+      document.getElementById('loginMsg').textContent = 'Supabase não configurado em data/admin-config.json.';
       document.getElementById('loginBtn').disabled = true;
       return;
     }
-    const s = loadSession();
-    if (s) {
-      try {
-        const me = await apiCall('GET', '/me');
-        setStatus(true, me.user);
-        await bootApp();
-      } catch {
-        clearSession();
-        setStatus(false);
-      }
+    const { data: { session } } = await sb.auth.getSession();
+    if (session) {
+      state.user = (session.user.email || '').replace(`@${ADMIN_DOMAIN}`, '');
+      setStatus(true, state.user);
+      await bootApp();
     }
   })();
 })();

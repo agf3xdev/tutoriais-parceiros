@@ -16,10 +16,23 @@
 
   const state = { lang: detectLang(), data: null };
 
+  // Conteúdo vem do Supabase (editável pelo /admin). Fallback: data/content.json no repo.
+  const SUPA_URL = 'https://yiywodoxnuhayttmdbqj.supabase.co';
+  const SUPA_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlpeXdvZG94bnVoYXl0dG1kYnFqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODI3NzcxMDQsImV4cCI6MjA5ODM1MzEwNH0._vE1VqWDtfYgbu-WCtrKDfc1dJgJltMMYPpspTnW5is';
+
   async function loadContent() {
-    const res = await fetch(`data/content.json?cb=${Date.now()}`);
-    if (!res.ok) throw new Error('Failed to load content');
-    state.data = await res.json();
+    try {
+      const res = await fetch(`${SUPA_URL}/rest/v1/content?id=eq.1&select=data`, {
+        headers: { apikey: SUPA_ANON, Authorization: `Bearer ${SUPA_ANON}` }
+      });
+      if (res.ok) {
+        const rows = await res.json();
+        if (rows && rows[0] && rows[0].data) { state.data = rows[0].data; return; }
+      }
+    } catch (e) { /* cai no fallback */ }
+    const r2 = await fetch(`data/content.json?cb=${Date.now()}`);
+    if (!r2.ok) throw new Error('Failed to load content');
+    state.data = await r2.json();
   }
 
   function thumbSvg(slug, idx) {
@@ -190,6 +203,8 @@
     const source = document.createElement('source');
     if (burnedLangs.includes(state.lang)) {
       source.src = `videos/${slug}.${state.lang}.mp4`;
+    } else if (tut.videoUrl) {
+      source.src = tut.videoUrl;
     } else {
       source.src = `videos/${slug}.mp4`;
     }
