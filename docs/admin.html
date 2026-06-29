@@ -12,8 +12,8 @@
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="admin.css" />
 </head>
-<body class="admin-body">
-  <header class="site-header">
+<body class="admin-body" data-screen="login">
+  <header class="site-header admin-header">
     <div class="container header-inner">
       <a href="index.html" class="brand" aria-label="Ingoo">
         <img class="brand-logo" src="images/ingoo-logo.png" alt="Ingoo" width="120" height="33" />
@@ -29,15 +29,32 @@
   <main class="admin-main">
     <div class="container">
       <!-- LOGIN -->
-      <section id="loginPanel" class="admin-card login-card">
-        <h1 class="admin-title">Entrar</h1>
-        <p class="admin-help">Acesse com seu usuário e senha de administrador.</p>
-        <div class="form-stack" style="max-width:360px">
-          <label><span>Usuário</span><input type="text" id="userInput" autocomplete="username" autofocus /></label>
-          <label><span>Senha</span><input type="password" id="passInput" autocomplete="current-password" /></label>
-          <button class="btn btn-primary" id="loginBtn" style="margin-top:4px">Entrar</button>
+      <section id="loginPanel" class="login-screen">
+        <div class="login-aurora" aria-hidden="true"></div>
+        <div class="login-card">
+          <div class="login-brand">
+            <img src="images/ingoo-logo.png" alt="Ingoo" width="140" height="38" />
+            <span class="login-eyebrow">Painel de administração · Parceiros</span>
+          </div>
+          <h1 class="login-title">Bem-vindo de volta</h1>
+          <p class="login-sub">Entre para gerenciar vídeos, FAQ e suporte da landing.</p>
+          <form class="login-form" id="loginForm" autocomplete="on" novalidate>
+            <label class="login-field">
+              <span>Usuário</span>
+              <input type="text" id="userInput" autocomplete="username" autofocus placeholder="seu.usuario" />
+            </label>
+            <label class="login-field">
+              <span>Senha</span>
+              <input type="password" id="passInput" autocomplete="current-password" placeholder="••••••••••" />
+            </label>
+            <button class="btn btn-primary login-submit" id="loginBtn" type="button">
+              <span>Entrar</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </button>
+            <p id="loginMsg" class="login-msg"></p>
+          </form>
+          <p class="login-footnote">Acesso restrito · Ingoo Brasil</p>
         </div>
-        <p id="loginMsg" class="admin-msg"></p>
       </section>
 
       <!-- APP -->

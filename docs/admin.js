@@ -485,24 +485,30 @@
   // ---------- INIT ----------
   function bindStaticEvents() {
     document.getElementById('logoutBtn').addEventListener('click', logout);
-    document.getElementById('loginBtn').addEventListener('click', async () => {
+    async function submitLogin() {
+      const btn = document.getElementById('loginBtn');
       const u = document.getElementById('userInput').value.trim();
       const p = document.getElementById('passInput').value;
       const lm = document.getElementById('loginMsg');
-      lm.className = 'admin-msg'; lm.textContent = 'Entrando…';
+      if (!u || !p) {
+        lm.className = 'login-msg err'; lm.textContent = 'Preencha usuário e senha.'; return;
+      }
+      btn.disabled = true;
+      lm.className = 'login-msg'; lm.textContent = 'Entrando…';
       try {
         await login(u, p);
-        lm.className = 'admin-msg ok'; lm.textContent = 'OK!';
+        lm.className = 'login-msg ok'; lm.textContent = 'Tudo certo, carregando…';
         setStatus(true, state.user);
         await bootApp();
       } catch (e) {
-        lm.className = 'admin-msg err'; lm.textContent = e.message;
+        lm.className = 'login-msg err'; lm.textContent = e.message;
+        btn.disabled = false;
       }
-    });
-    // Enter no campo de senha = submit
-    document.getElementById('passInput').addEventListener('keydown', (e) => {
-      if (e.key === 'Enter') document.getElementById('loginBtn').click();
-    });
+    }
+    document.getElementById('loginBtn').addEventListener('click', submitLogin);
+    document.getElementById('loginForm').addEventListener('submit', (e) => { e.preventDefault(); submitLogin(); });
+    document.getElementById('userInput').addEventListener('keydown', (e) => { if (e.key === 'Enter') { e.preventDefault(); submitLogin(); } });
+    document.getElementById('passInput').addEventListener('keydown', (e) => { if (e.key === 'Enter') { e.preventDefault(); submitLogin(); } });
 
     document.querySelectorAll('.admin-tabs .tab').forEach((b) => {
       b.addEventListener('click', () => setTab(b.dataset.tab));
@@ -523,6 +529,7 @@
   }
 
   async function bootApp() {
+    document.body.dataset.screen = 'app';
     document.getElementById('loginPanel').style.display = 'none';
     document.getElementById('appPanel').style.display = '';
     try {
@@ -551,7 +558,7 @@
     await loadConfig();
     bindStaticEvents();
     if (!state.api) {
-      document.getElementById('loginMsg').className = 'admin-msg err';
+      document.getElementById('loginMsg').className = 'login-msg err';
       document.getElementById('loginMsg').textContent = 'Worker ainda não configurado. Defina a URL em data/admin-config.json.';
       document.getElementById('loginBtn').disabled = true;
       return;

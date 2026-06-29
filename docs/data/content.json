@@ -200,6 +200,81 @@
           "badge": "广告"
         }
       }
+    },
+    {
+      "slug": "abertura-maquina",
+      "i18n": {
+        "pt": {
+          "title": "Abertura da máquina",
+          "desc": "Como abrir a máquina com segurança para troca de chip, manutenção ou diagnóstico.",
+          "badge": "Operação"
+        },
+        "en": {
+          "title": "Opening the station",
+          "desc": "How to safely open the station for SIM swap, maintenance or diagnostics.",
+          "badge": "Operations"
+        },
+        "es": {
+          "title": "Apertura de la máquina",
+          "desc": "Cómo abrir la máquina con seguridad para cambio de chip, mantenimiento o diagnóstico.",
+          "badge": "Operación"
+        },
+        "zh": {
+          "title": "机器开箱",
+          "desc": "如何安全地打开机器以更换 SIM 卡、维护或诊断。",
+          "badge": "运维"
+        }
+      }
+    },
+    {
+      "slug": "troca-voltagem",
+      "i18n": {
+        "pt": {
+          "title": "Troca de voltagem (110V ↔ 220V)",
+          "desc": "Como identificar e ajustar a voltagem da máquina antes da instalação, evitando danos à fonte.",
+          "badge": "Instalação"
+        },
+        "en": {
+          "title": "Changing voltage (110V ↔ 220V)",
+          "desc": "How to identify and switch the station voltage before installation to avoid damage to the PSU.",
+          "badge": "Install"
+        },
+        "es": {
+          "title": "Cambio de voltaje (110V ↔ 220V)",
+          "desc": "Cómo identificar y ajustar el voltaje de la máquina antes de la instalación para evitar daños.",
+          "badge": "Instalación"
+        },
+        "zh": {
+          "title": "电压切换（110V ↔ 220V）",
+          "desc": "在安装前如何识别并切换机器电压，避免损坏电源。",
+          "badge": "安装"
+        }
+      }
+    },
+    {
+      "slug": "painel-motoboy",
+      "i18n": {
+        "pt": {
+          "title": "Painel do motoboy: visitas e problemas técnicos",
+          "desc": "Como o motoboy registra visitas em campo, reporta problemas técnicos e atualiza o status das máquinas.",
+          "badge": "Operação"
+        },
+        "en": {
+          "title": "Courier panel: visits and tech issues",
+          "desc": "How the field courier logs station visits, reports technical issues and updates station status.",
+          "badge": "Operations"
+        },
+        "es": {
+          "title": "Panel del motoboy: visitas y problemas técnicos",
+          "desc": "Cómo el motoboy registra visitas en campo, reporta problemas técnicos y actualiza el estado de las máquinas.",
+          "badge": "Operación"
+        },
+        "zh": {
+          "title": "外勤面板：到访与技术问题",
+          "desc": "外勤人员如何登记现场到访、上报技术问题并更新机器状态。",
+          "badge": "运维"
+        }
+      }
     }
   ],
   "site": {
