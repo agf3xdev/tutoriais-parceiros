@@ -275,6 +275,31 @@
           "badge": "运维"
         }
       }
+    },
+    {
+      "slug": "ejetar-powerbank",
+      "i18n": {
+        "pt": {
+          "title": "Ejetar power bank pelo sistema",
+          "desc": "Como liberar manualmente um power bank pelo painel administrativo, sem precisar ir até a máquina.",
+          "badge": "Sistema"
+        },
+        "en": {
+          "title": "Eject a power bank from the system",
+          "desc": "How to manually release a power bank from the admin panel, without having to go to the station.",
+          "badge": "System"
+        },
+        "es": {
+          "title": "Eyectar power bank desde el sistema",
+          "desc": "Cómo liberar manualmente un power bank desde el panel administrativo, sin tener que ir a la máquina.",
+          "badge": "Sistema"
+        },
+        "zh": {
+          "title": "通过系统弹出充电宝",
+          "desc": "如何在管理后台手动释放充电宝，无需到机器现场操作。",
+          "badge": "系统"
+        }
+      }
     }
   ],
   "site": {
