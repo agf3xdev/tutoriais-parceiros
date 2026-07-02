@@ -181,10 +181,6 @@
     },
     {
       "slug": "adicionar-anuncio",
-      "burnedLangs": [
-        "pt",
-        "zh"
-      ],
       "i18n": {
         "pt": {
           "title": "Como adicionar um anúncio na máquina",
@@ -330,6 +326,31 @@
           "title": "配置店铺 NFC",
           "desc": "自定义桌上 NFC 卡片：联系方式、照片/视频菜单、产品、订单和员工账号。",
           "badge": "商户"
+        }
+      }
+    },
+    {
+      "slug": "consultar-pedido",
+      "i18n": {
+        "pt": {
+          "title": "Consulta de pedido",
+          "desc": "Como localizar e conferir um pedido no sistema pelo ID, data ou cliente — status, retirada e devolução.",
+          "badge": "Sistema"
+        },
+        "en": {
+          "title": "Order lookup",
+          "desc": "How to find and inspect an order in the system by ID, date or customer — status, pickup and return.",
+          "badge": "System"
+        },
+        "es": {
+          "title": "Consulta de pedido",
+          "desc": "Cómo localizar y revisar un pedido en el sistema por ID, fecha o cliente — estado, retiro y devolución.",
+          "badge": "Sistema"
+        },
+        "zh": {
+          "title": "订单查询",
+          "desc": "如何在系统中通过订单号、日期或客户查询订单——状态、取借与归还。",
+          "badge": "系统"
         }
       }
     }
