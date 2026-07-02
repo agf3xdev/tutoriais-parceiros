@@ -151,7 +151,11 @@
     },
     {
       "slug": "outros-produtos-ingoo",
-      "burnedLangs": ["pt", "en", "zh"],
+      "burnedLangs": [
+        "pt",
+        "en",
+        "zh"
+      ],
       "i18n": {
         "pt": {
           "title": "Conheça nossos outros produtos",
@@ -177,7 +181,10 @@
     },
     {
       "slug": "adicionar-anuncio",
-      "burnedLangs": ["pt", "zh"],
+      "burnedLangs": [
+        "pt",
+        "zh"
+      ],
       "i18n": {
         "pt": {
           "title": "Como adicionar um anúncio na máquina",
@@ -298,6 +305,31 @@
           "title": "通过系统弹出充电宝",
           "desc": "如何在管理后台手动释放充电宝，无需到机器现场操作。",
           "badge": "系统"
+        }
+      }
+    },
+    {
+      "slug": "configurar-nfc",
+      "i18n": {
+        "pt": {
+          "title": "Configurar NFC do estabelecimento",
+          "desc": "Personalize as tags NFC das mesas: contatos, cardápio em fotos e vídeo, produtos, pedidos e funcionários.",
+          "badge": "Comerciante"
+        },
+        "en": {
+          "title": "Configure your venue NFC",
+          "desc": "Customize table NFC tags: contacts, photo/video menu, products, orders, and staff accounts.",
+          "badge": "Merchant"
+        },
+        "es": {
+          "title": "Configurar el NFC del establecimiento",
+          "desc": "Personaliza las etiquetas NFC de las mesas: contactos, fotos/vídeo, productos, pedidos y empleados.",
+          "badge": "Comerciante"
+        },
+        "zh": {
+          "title": "配置店铺 NFC",
+          "desc": "自定义桌上 NFC 卡片：联系方式、照片/视频菜单、产品、订单和员工账号。",
+          "badge": "商户"
         }
       }
     }
