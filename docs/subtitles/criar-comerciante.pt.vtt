@@ -1,0 +1,49 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:06.780
+Para criar um comerciante, primeiro você cria o admin do comerciante. Temos a opção pessoa física ou
+
+00:00:06.780 --> 00:00:14.740
+empresa. Como é comércio, vamos em empresa. Aqui você adiciona o nome do
+
+00:00:14.740 --> 00:00:27.960
+comércio — isto é só um teste — depois o CNPJ, o endereço do estabelecimento e o representante legal,
+
+00:00:27.960 --> 00:00:31.440
+com quem você entrou em contato: gerente ou dono.
+
+00:00:33.860 --> 00:00:42.180
+O telefone do representante — lembrando que esse telefone tem que ser o mesmo daqui de baixo,
+
+00:00:42.460 --> 00:00:46.100
+que é a opção pela qual ele vai entrar para sacar o dinheiro dele.
+
+00:00:46.360 --> 00:00:47.900
+Então tem que ser o mesmo.
+
+00:00:47.900 --> 00:00:56.420
+E aqui adicionamos uma senha padrão, que é "parceiroingoo26".
+
+00:00:57.960 --> 00:01:00.060
+É a senha padrão para todos.
+
+00:01:00.640 --> 00:01:07.980
+E aqui a chave PIX dele. Temos a opção de CPF, CNPJ, e-mail, telefone ou chave aleatória.
+
+00:01:08.580 --> 00:01:11.560
+Aqui eu coloquei como telefone e pronto.
+
+00:01:12.140 --> 00:01:13.440
+Status: normal.
+
+00:01:14.120 --> 00:01:16.680
+Aqui você só aperta em confirmar e pronto:
+
+00:01:16.780 --> 00:01:19.420
+seu admin de comerciante já está criado.
+
+00:01:19.420 --> 00:01:27.460
+Para o comerciante entrar e sacar o dinheiro, basta ele incluir o telefone
+
+00:01:27.960 --> 00:01:35.280
+dele e a senha, que é "parceiroingoo26".

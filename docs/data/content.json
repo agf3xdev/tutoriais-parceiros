@@ -353,6 +353,31 @@
           "badge": "系统"
         }
       }
+    },
+    {
+      "slug": "criar-comerciante",
+      "i18n": {
+        "pt": {
+          "title": "Criar novo comerciante",
+          "desc": "Como cadastrar um comerciante do zero: dados do estabelecimento, representante legal, senha padrão e chave PIX para saque.",
+          "badge": "Sistema"
+        },
+        "en": {
+          "title": "Create a new merchant",
+          "desc": "How to register a merchant from scratch: store info, legal representative, default password and PIX key for withdrawals.",
+          "badge": "System"
+        },
+        "es": {
+          "title": "Crear nuevo comerciante",
+          "desc": "Cómo registrar un comerciante desde cero: datos del establecimiento, representante legal, contraseña estándar y clave PIX para retiro.",
+          "badge": "Sistema"
+        },
+        "zh": {
+          "title": "新建商户",
+          "desc": "从零开始注册商户：店铺信息、法定代表人、默认密码以及用于提现的 PIX 收款方式。",
+          "badge": "系统"
+        }
+      }
     }
   ],
   "site": {

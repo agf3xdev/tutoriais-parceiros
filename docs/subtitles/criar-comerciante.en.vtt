@@ -1,0 +1,49 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:06.780
+To create a merchant, first create the merchant admin. There's an option for "individual" or
+
+00:00:06.780 --> 00:00:14.740
+"company". Since it's a business, we pick company. Here you enter the
+
+00:00:14.740 --> 00:00:27.960
+store name — this is just a test — then the tax ID (CNPJ), the store address and the legal representative,
+
+00:00:27.960 --> 00:00:31.440
+whoever you're in contact with: manager or owner.
+
+00:00:33.860 --> 00:00:42.180
+The representative's phone — note this phone must match the one below,
+
+00:00:42.460 --> 00:00:46.100
+which is what they'll use to log in and withdraw their money.
+
+00:00:46.360 --> 00:00:47.900
+So they have to match.
+
+00:00:47.900 --> 00:00:56.420
+Then we set a default password: "parceiroingoo26".
+
+00:00:57.960 --> 00:01:00.060
+Same default password for all merchants.
+
+00:01:00.640 --> 00:01:07.980
+Then their PIX key. Options: CPF, CNPJ, e-mail, phone number or random key.
+
+00:01:08.580 --> 00:01:11.560
+Here I used the phone number, and that's it.
+
+00:01:12.140 --> 00:01:13.440
+Status: normal.
+
+00:01:14.120 --> 00:01:16.680
+Now just hit confirm and you're done:
+
+00:01:16.780 --> 00:01:19.420
+the merchant admin is created.
+
+00:01:19.420 --> 00:01:27.460
+For the merchant to log in and withdraw money, they just enter the phone
+
+00:01:27.960 --> 00:01:35.280
+and the password: "parceiroingoo26".
