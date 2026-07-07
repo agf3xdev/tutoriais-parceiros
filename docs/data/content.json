@@ -378,6 +378,31 @@
           "badge": "系统"
         }
       }
+    },
+    {
+      "slug": "reembolso-sistema",
+      "i18n": {
+        "pt": {
+          "title": "Reembolso pelo sistema",
+          "desc": "Como reembolsar o cliente quando o power bank trava e ele é cobrado indevidamente — motivo, confirmação e status pós-venda.",
+          "badge": "Sistema"
+        },
+        "en": {
+          "title": "Refund from the system",
+          "desc": "How to refund a customer when the power bank gets stuck and they're wrongly charged — reason, confirmation and after-sales status.",
+          "badge": "System"
+        },
+        "es": {
+          "title": "Reembolso desde el sistema",
+          "desc": "Cómo reembolsar al cliente cuando el power bank se atasca y es cobrado indebidamente — motivo, confirmación y estado posventa.",
+          "badge": "Sistema"
+        },
+        "zh": {
+          "title": "系统内退款",
+          "desc": "当充电宝卡住导致客户被误扣时如何退款——填写原因、确认操作以及售后状态说明。",
+          "badge": "系统"
+        }
+      }
     }
   ],
   "site": {
