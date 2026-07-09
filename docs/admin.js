@@ -143,6 +143,11 @@
     }
     wrap.innerHTML = list.map((t, i) => {
       const ptTitle = (t.i18n?.pt?.title) || t.slug;
+      const burnedLangsArr = Array.isArray(t.burnedLangs) ? t.burnedLangs : (t.burnedSubs ? ['pt'] : []);
+      const sourceLabel = t.videoUrl
+        ? 'Supabase (enviado pelo admin)'
+        : (burnedLangsArr.length ? `GitHub · versões com legenda queimada: ${burnedLangsArr.join(', ').toUpperCase()}` : 'GitHub');
+      const currentUrl = t.videoUrl || `videos/${t.slug}.mp4`;
       return `
         <div class="tut-item" data-idx="${i}">
           <div class="tut-head">
@@ -151,6 +156,20 @@
             <span class="chev">▾</span>
           </div>
           <div class="tut-body">
+            <div class="tut-video-block">
+              <div class="tut-video-head">
+                <div>
+                  <h4>Vídeo</h4>
+                  <p class="tut-video-meta">Origem: ${sourceLabel}</p>
+                  <p class="tut-video-meta"><a href="${currentUrl}" target="_blank" rel="noopener">Abrir vídeo atual ↗</a></p>
+                </div>
+                <label class="btn btn-ghost btn-sm tut-video-btn">
+                  Trocar vídeo
+                  <input type="file" accept="video/mp4" data-replace-video style="display:none"/>
+                </label>
+              </div>
+              <p class="tut-video-progress" data-video-progress></p>
+            </div>
             <label style="margin-bottom:10px;display:flex;align-items:center;gap:8px;cursor:pointer;color:var(--muted);font-size:13px">
               <input type="checkbox" data-burned ${t.burnedSubs ? 'checked' : ''} style="width:auto"/>
               Vídeo já tem legenda PT queimada (usa <code style="font-family:var(--mono);font-size:12px">${t.slug}.pt.mp4</code> para PT)
@@ -183,6 +202,50 @@
         state.data.tutorials[idx].burnedSubs = e.target.checked;
         markDirty();
       });
+      const replaceInput = item.querySelector('[data-replace-video]');
+      const progressEl = item.querySelector('[data-video-progress]');
+      replaceInput.addEventListener('change', async (e) => {
+        e.stopPropagation();
+        const file = replaceInput.files[0];
+        if (!file) return;
+        if (file.size > 50 * 1024 * 1024) {
+          progressEl.textContent = `Arquivo muito grande (${(file.size/1024/1024).toFixed(1)} MB). Limite ~50 MB.`;
+          progressEl.className = 'tut-video-progress err';
+          return;
+        }
+        const tut = state.data.tutorials[idx];
+        const burned = Array.isArray(tut.burnedLangs) ? tut.burnedLangs : (tut.burnedSubs ? ['pt'] : []);
+        if (burned.length) {
+          if (!confirm(`Este tutorial usa vídeos com legenda queimada (${burned.join(', ').toUpperCase()}). Ao trocar por um único arquivo, todas as línguas vão usar este vídeo e as legendas queimadas deixam de ser usadas. Continuar?`)) {
+            replaceInput.value = '';
+            return;
+          }
+        }
+        const path = `${tut.slug}-${Date.now()}.mp4`;
+        progressEl.className = 'tut-video-progress';
+        progressEl.textContent = 'Enviando vídeo…';
+        try {
+          const up = await sb.storage.from('videos').upload(path, file, { upsert: false, contentType: 'video/mp4' });
+          if (up.error) throw new Error(up.error.message);
+          const { data: pub } = sb.storage.from('videos').getPublicUrl(path);
+          tut.videoUrl = pub.publicUrl;
+          delete tut.burnedLangs;
+          delete tut.burnedSubs;
+          markDirty();
+          progressEl.className = 'tut-video-progress ok';
+          progressEl.textContent = 'Vídeo trocado. Clique em "Salvar tudo" para publicar.';
+          renderTutorials();
+          const reopened = wrap.querySelector(`.tut-item[data-idx="${idx}"]`);
+          if (reopened) reopened.classList.add('open');
+        } catch (err) {
+          progressEl.className = 'tut-video-progress err';
+          progressEl.textContent = err.message;
+        } finally {
+          replaceInput.value = '';
+        }
+      });
+      replaceInput.addEventListener('click', (e) => e.stopPropagation());
+      item.querySelector('.tut-video-block').addEventListener('click', (e) => e.stopPropagation());
       item.querySelectorAll('.tut-lang-block').forEach((blk) => {
         const lang = blk.dataset.lang;
         blk.querySelectorAll('[data-field]').forEach((el) => {

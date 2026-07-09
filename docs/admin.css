@@ -339,6 +339,34 @@ textarea { resize: vertical; min-height: 80px; font-family: inherit; line-height
   border-top: 1px solid var(--border);
 }
 .tut-item.open .tut-body { display: block; }
+.tut-video-block {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin-bottom: 12px;
+}
+.tut-video-head {
+  display: flex; align-items: flex-start; gap: 12px; justify-content: space-between;
+  flex-wrap: wrap;
+}
+.tut-video-head h4 {
+  margin: 0 0 4px;
+  font-size: 11px; text-transform: uppercase; letter-spacing: .08em;
+  color: var(--muted); font-weight: 700;
+}
+.tut-video-meta {
+  margin: 2px 0; font-size: 12px; color: var(--muted); line-height: 1.4;
+}
+.tut-video-meta a { color: var(--orange); }
+.tut-video-btn { position: relative; cursor: pointer; white-space: nowrap; }
+.tut-video-progress {
+  margin: 8px 0 0; font-size: 12px; color: var(--muted);
+  font-family: var(--mono);
+}
+.tut-video-progress.ok { color: #22c55e; }
+.tut-video-progress.err { color: #ef4444; }
+
 .tut-lang-block {
   margin-bottom: 14px;
   padding: 12px;
